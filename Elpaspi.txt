@@ -1,0 +1,191 @@
+#inicia el backend
+
+npm init 
+
+
+
+#instala lo que necesitas 
+npm i cors
+npm i express
+npm i morgan
+npm i pg-promise
+npm i express-validator
+
+
+npm i bcryptjs
+npm i jsonwebtoken
+
+
+npm i dotenv --save-dev
+npm i nodemon --save-dev
+npm i @types/cors --save-dev
+npm i @types/express --save-dev
+npm i @types/morgan --save-dev
+
+#Ahora typescript
+npm install -g typescript 
+tsc --init
+
+#Ahora ahora te configuras el tsc llamando tsconfig 
+
+
+
+y quitas los comentarios de  44, 61
+
+# Ahora configuraste el packpage json 
+
+"dev": "nodemon build/index.js,
+    build":"tsc -w"
+
+
+ahora si el scafolding
+md src/app
+md src/config
+md src/middleware
+md src/external_files
+
+md database
+
+md src/config/api
+md src/config/domain
+md src/config/utilities
+md src/config/connection 
+
+md /external_files/pdf
+md /external_files/excel
+md /external_files/word
+md /external_files/image
+
+
+md src/app/rol
+md src/app/rol/controller
+md src/app/rol/service
+md src/app/rol/repository 
+md src/app/rol/model
+md src/app/rol/route
+
+
+md src/app/ticket
+md src/app/ticket/controller
+md src/app/ticket/service
+md src/app/ticket/repository 
+md src/app/ticket/model
+md src/app/ticket/route
+
+
+
+md src/app/tipomembresia
+md src/app/tipomembresia/controller
+md src/app/tipomembresia/service
+md src/app/tipomembresia/repository 
+md src/app/tipomembresia/model
+md src/app/tipomembresia/route
+md src/app/login/controller   
+
+
+
+
+PORT = 5432
+DATABASE= "db_ing"
+HOST= "localhost
+USER_DB"= "user_ing"
+USER_PASSWORD= "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+
+en el respositorio
+
+En un nuevo archiuvo llamado sql_rol
+
+export const sql_rol={
+FIND_ALL: "SELECT r.id, r.nombre, r.nose from roles r",
+
+
+FIND_BY_ID: "SELECT * FROM roles where id=$1",
+
+}
+Potgress
+insert into roles(nombre_rol) values('Administrador'),( 'Empleado'),('Usuario');
+
+npm run build
+npm run dev
+
+http://localhost:3123/api/rol/getall
+
+
+http://localhost:3123/api/rol/add
+
+
+//Seguridad del login 
+instalamos esos paquetes en en json desde consola 
+
+npm i @types/bcryptjs --save-dev
+npm i @types/jsonwebtoken --save-dev
+
+luego añadimos el sha512
+de la contraseña del usuario 
+
+y en servicios añadimos esta linea 
+const clavecifrada=cifrar.hashSync(obj.claveAcceso);
+            console.log("Clave cifrada:", clavecifrada)
+
+en el servicio de login 
+
+y esa clave la copiamos y la guardamos en un txt hacemos ese proceso 12 veces enviando el primer hash 12 veces 
+y la enviamos desde el postman esas 12 veces y agarramos lo que imprime y los copiamos
+en el txt 12 veces
+
+
+//en el sql del login 
+
+cambiamos el sql que valida y borramos la contraseña y solo lo dejamos para validar con el correo 
+
+
+//en el sql del login hacemos tambien un sql que nos traiga la contraseña que viene de la base de datos 
+
+y luego del const acceso del usuario o antes dependende donde lo tengas borramos el console log existente y hacemos 2 console log imprimiendo contraseña que viene de la base de datos y la que viene del postman 
+
+
+
+console log("contraseña del postman:", clavecifrado)
+
+otro console.log(Comparacion", cifrar.hashSync(usuario.claveAcceso));
+
+luego const clavecorrecta=cifrar.compareSync(obj.claveAcceso,usuario.clavecifrada);
+
+
+
+
+En el modelo del logen hacemos una clase llamada infotoken.ts
+
+miramos el sql de acceso y deberia haber una consulta que devuelva todos los datos del usuario ya deberia estar puesta y la vamos a poner ihual a como viene en esa consulta 
+pasamos el public codusuario?:number
+pasamos el public nombre?: string  
+public  apellido?:string 
+public nombreRol?:string
+
+ahora hacemos el constructor con el constructor vacio 
+
+constructor(){
+
+}
+
+y esto es un ejemplo de como se hace un dto en node 
+
+nos vamos a servicios de login y importamos Jwt 
+
+usamos JWT.IS
+Para ver el token copiamos el codigo que mando el token 
+
+
+//en el postman hemos usado body pero ahora usaremos headers y mando en key autorization y en value jajajajaja 
+luegos iniciamos sesion  y mandamos el token de iniciar sesion pero antes del enviar el token ponemos bearer 
+y abajo el token generado
+
+
+primero el respositorio
+luego el modelo despues el servicio y luego el controlador y por ultimo el validador  en config <domain
+
+Para diseño bajamos el archivo llamado unpack200 y se reemplaza en la siguiente ruta 
+C:\Program Files\Java\jdk-21\bin
+y lo pegamos en bin 
+
+ahora usamos easy UML el cual es un pluglin que vamos a hacer con otra herramienta como netbeans 
