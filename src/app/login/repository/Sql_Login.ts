@@ -7,6 +7,12 @@ export const sql_login={
     WHERE a.correo_acceso = $1;`,
  
   GETBYID: `SELECT * FROM accesos WHERE cod_usuario = $1`,
+<<<<<<< HEAD
+=======
+  
+  LOGIN_USUARIO: "SELECT cod_usuario , clave_acceso from accesos\
+    where correo_acceso = $1 ",
+>>>>>>> 62f9d91 (Cambios realizados)
 
 
 }

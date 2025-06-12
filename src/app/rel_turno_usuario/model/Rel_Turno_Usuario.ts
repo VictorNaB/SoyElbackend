@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 class rel_turno_usuario{
     Cod_Turno_Usuario:number;
     cod_turno:number;
@@ -40,3 +41,46 @@ class rel_turno_usuario{
 }
 
 export default rel_turno_usuario;
+=======
+class Relacion_Turno_Usuario{
+
+    private Cod_turnousuario:number;
+    private Cod_turno:number;
+    private Cod_usuario:number;
+
+    constructor(cod_turnousuario: number,cod_turno:number,cod_usuario:number){
+        this.Cod_turnousuario=cod_turnousuario;
+        this.Cod_turno=cod_turno;
+        this.Cod_usuario=cod_usuario;
+    }
+
+    public get CodTurnoUsuario():number{
+        return this.Cod_turnousuario;
+    }
+
+    public set CodTurnoUsuario(cod_turnousuario:number){
+        this.Cod_turnousuario=cod_turnousuario;
+    }
+
+    public get CodTurno():number{
+        return this.Cod_turno;
+    }
+
+    public set CodTurno(cod_turno:number){
+        this.Cod_turno=cod_turno;
+    }
+
+    public get CodUsuario():number{
+        return this.Cod_usuario;
+    }
+
+    public set CodUsuario(cod_usuario:number){
+        this.Cod_usuario=cod_usuario;
+    }
+
+    
+
+}
+
+export default Relacion_Turno_Usuario;
+>>>>>>> 62f9d91 (Cambios realizados)
