@@ -1,4 +1,5 @@
 import { Response } from "express";
+<<<<<<< HEAD
 import { sql_Turnos } from "../repository/Sql_Turnos";
 import Turnos from "../model/Turnos";
 import pool from "../../../config/connection/dbConnetions";
@@ -35,3 +36,38 @@ class ServicioCrearTurno{
 }
 
 export default ServicioCrearTurno;
+=======
+import pool from "../../../config/connection/dbConnetions";
+import { SQL_TURNO } from "../repository/sql_turno";
+import Turno from "../model/Turno";
+
+class ServicioCrearTurno{
+    protected static async CrearTurno(obj:Turno,res:Response):Promise<any>{
+        await pool.task(async(consulta)=>{
+            let caso=1;
+            let objCreado:any;
+            const Turno= await consulta.one(SQL_TURNO.HOW_MANY, [obj.DescripcionTurno]);
+            if(Turno.cantidad==0){
+                caso=2;
+                objCreado= await consulta.one(SQL_TURNO.ADD,[obj.CodParqueadero,obj.DescripcionTurno,obj.FechaTurno,obj.HoraInicioTurno,obj.HoraFinTurno]);
+            }
+            return {caso, objCreado}
+        }).then(({caso,objCreado})=>{
+            switch (caso) {
+                case 1:
+                    res.status(400).json({respuesta:"Vale mia eso ya esta"})
+                    break;
+            
+                default:
+                    res.status(200).json({objCreado})
+                    break;
+            }
+        }).catch((mierror)=>{
+            console.log();
+            res.status(400).json({respuesta:"Joaa"})
+        });
+    }
+}
+
+export default ServicioCrearTurno
+>>>>>>> 62f9d91 (Cambios realizados)

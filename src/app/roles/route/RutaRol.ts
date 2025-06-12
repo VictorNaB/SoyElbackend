@@ -2,13 +2,21 @@ import { Router } from "express";
 import controladorRolConsulta from "../controller/ControladoRolConsultas";
 import controladorRolCrear from "../controller/ControladorRolCrear";
 import {
+<<<<<<< HEAD
   datosRolActualizar,
+=======
+  datosActualizar,
+>>>>>>> 62f9d91 (Cambios realizados)
   datosRolBorrar,
   datosRolCrear,
 } from "../../../config/domain/ValidarRol";
 import validarDatos from "../../../middleware/ValidarDatos";
 import controladorRolBorrar from "../controller/ControladorRolBorrar";
 import controladorRolActualizar from "../controller/ControladorRolActualizar";
+<<<<<<< HEAD
+=======
+import { Request, Response } from "express";
+>>>>>>> 62f9d91 (Cambios realizados)
 
 class RutaRol {
   public rutalRolApi: Router;
@@ -25,6 +33,7 @@ class RutaRol {
     );
     this.rutalRolApi.delete(
       "/delete/:codRol",
+<<<<<<< HEAD
       datosRolBorrar,
       validarDatos.ahora,
       controladorRolBorrar.llamarRolBorrar
@@ -32,6 +41,16 @@ class RutaRol {
     this.rutalRolApi.put(
       "/update",
       datosRolActualizar,
+=======
+      async (req: Request, res: Response) => {
+        const controlador = new controladorRolBorrar();
+        await controlador.borrar(req, res);
+      }
+    );
+    this.rutalRolApi.put(
+      "/update",
+      datosActualizar,
+>>>>>>> 62f9d91 (Cambios realizados)
       validarDatos.ahora,
       controladorRolActualizar.llamarActualizar
     );
