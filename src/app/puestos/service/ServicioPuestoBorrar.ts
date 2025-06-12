@@ -11,6 +11,7 @@ class ServicioPuestoBorrar{
             let caso=0;
             let objeliminado:any;
             
+<<<<<<< HEAD
             const puesto = await consulta.one(sql_puesto.FIND_BY,[obj.codPuesto]);
             const servidiariorelacionado= await consulta.any(Sql_ServiciosDiarios.FIND_BY_PUESTO,[obj.codPuesto]);
             if(puesto==null){
@@ -27,6 +28,22 @@ class ServicioPuestoBorrar{
                 caso=4;
             
             }
+=======
+            const puesto2= await consulta.oneOrNone(sql_puesto.HOW_MANY2,[obj.codPuesto]);
+            const servidiariorelacionado= await consulta.any(Sql_ServiciosDiarios.FIND_BY_PUESTO,[obj.codPuesto]);
+            if(!puesto2||puesto2.cantidad==0){
+               caso=1;
+               return{caso};
+            }
+            
+            if(servidiariorelacionado.length>0){
+                caso=2;
+                return{caso};
+            }
+            objeliminado= await consulta.result(sql_puesto.DELETE,[obj.codPuesto]);
+            caso=3;
+
+>>>>>>> 62f9d91 (Cambios realizados)
 
             return {caso,objeliminado}
             
@@ -42,9 +59,12 @@ class ServicioPuestoBorrar{
             case 3:
                 res.status(200).json({respuesta:"Se elimino Correctamente", "filas borradas":objeliminado.rowCount,});
                 break;
+<<<<<<< HEAD
             case 4:
                 res.status(400).json({respuesta:"No se pudo eliminar"});
                 break;
+=======
+>>>>>>> 62f9d91 (Cambios realizados)
             default:
                 break;
            }

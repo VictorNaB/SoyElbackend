@@ -10,6 +10,11 @@ export const sql_puesto = {
 
   HOW_MANY: "SELECT COUNT(cod_puesto) AS cantidad FROM puestos \
     WHERE detalle_puesto= $1",
+<<<<<<< HEAD
+=======
+
+  HOW_MANY2: "SELECT COUNT(cod_puesto) AS cantidad FROM puestos WHERE cod_puesto=$1",
+>>>>>>> 62f9d91 (Cambios realizados)
   ADD: "INSERT INTO puestos(cod_parqueadero,cod_tipo_vehiculo,detalle_puesto) VALUES($1,$2,$3) \
   RETURNING cod_puesto",
   

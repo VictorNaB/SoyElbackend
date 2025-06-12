@@ -9,8 +9,11 @@ export const sql_usuarios = {
     WHERE u.cod_usuario = $1;`,
   
     FIND_BY_ID: "SELECT * FROM usuarios",
+<<<<<<< HEAD
 
     FIND_BY_DOCUMENTO:"SELECT documento_usuario FROM usuarios WHERE documento_usuario=$1",
+=======
+>>>>>>> 62f9d91 (Cambios realizados)
   
     HOW_MANY:
       "SELECT COUNT(cod_usuario) as cantidad FROM usuarios WHERE cod_usuario = $1",
@@ -21,5 +24,16 @@ export const sql_usuarios = {
       "UPDATE usuarios SET cod_rol = $1, documento_usuario = $2, nombres_usuario = $3, apellidos_usuario = $4, genero_usuario = $5, fecha_nacimiento_usuario = $6, telefono_usuario = $7 WHERE cod_usuario = $8",
   
     DELETE: "DELETE FROM usuarios WHERE cod_usuario = $1",
+<<<<<<< HEAD
+=======
+
+    COUNT_ACCESOS_ASOCIADOS: "SELECT COUNT(*) as cantidad FROM accesos WHERE cod_usuario = $1",
+    
+    COUNT_VEHICULOS_ASOCIADOS: "SELECT COUNT(*) as cantidad FROM vehiculos WHERE cod_usuario = $1",
+    
+    COUNT_RELACIONES_FUNCIONALIDAD: "SELECT COUNT(*) as cantidad FROM rel_usuario_funcionalidad WHERE cod_usuario = $1",
+    
+    COUNT_RELACIONES_TURNO: "SELECT COUNT(*) as cantidad FROM rel_turno_usuario WHERE cod_usuario = $1",
+>>>>>>> 62f9d91 (Cambios realizados)
   };
   
