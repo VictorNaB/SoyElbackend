@@ -1,13 +1,9 @@
 import { Response } from "express";
-<<<<<<< HEAD
 import Accesos from "../model/Accesos";
-=======
->>>>>>> 62f9d91 (Cambios realizados)
 import pool from "../../../config/connection/dbConnetions";
 import { sql_Accesos } from "../repository/Sql_Accesos";
 
 class ServicioBorrarAcceso {
-<<<<<<< HEAD
   protected static async BorrarAcceso(
     obj: Accesos,
     res: Response
@@ -49,7 +45,7 @@ class ServicioBorrarAcceso {
         });
       });
   }
-=======
+
     public static async eliminar(codUsuario: number, res: Response): Promise<void> {
         try {
             await pool.task(async (consulta) => {
@@ -82,7 +78,8 @@ class ServicioBorrarAcceso {
             });
         }
     }
->>>>>>> 62f9d91 (Cambios realizados)
+
 }
 
 export default ServicioBorrarAcceso;
+
