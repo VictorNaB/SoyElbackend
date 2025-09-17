@@ -1,5 +1,5 @@
 class Usuario {
-<<<<<<< HEAD
+
     private _codUsuario: number;
     private _codRol: number;
     private _documentoUsuario: string;
@@ -64,7 +64,6 @@ class Usuario {
   
   export default Usuario;
   
-=======
   private _codUsuario: number;
   private _codRol: number;
   private _documentoUsuario: string;
@@ -128,4 +127,4 @@ class Usuario {
 }
 
 export default Usuario;
->>>>>>> 62f9d91 (Cambios realizados)
+
