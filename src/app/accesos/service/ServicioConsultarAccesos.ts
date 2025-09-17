@@ -9,10 +9,9 @@ class ServicioConsultarAccesos {
         .then((misdatos)=>{
             res.status(200).json(misdatos.rows);
         }).catch((Error)=>{
-<<<<<<< HEAD
+
             console.log(Error);
-=======
->>>>>>> 62f9d91 (Cambios realizados)
+
             res
               .status(400)
               .json({
@@ -24,3 +23,4 @@ class ServicioConsultarAccesos {
 }
 
 export default ServicioConsultarAccesos;
+
