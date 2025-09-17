@@ -3,7 +3,7 @@ import Usuario from "../model/Usuario";
 import pool from "../../../config/connection/dbConnetions";
 import { sql_usuarios } from "../repository/Sql_Usuario";
 
-<<<<<<< HEAD
+
 class ServicioBorrarUsuario{
     protected static async eliminar(obj:Usuario, res:Response):Promise<any>{
         await pool.task((consulta)=>{
@@ -16,7 +16,7 @@ class ServicioBorrarUsuario{
 
         });
 
-=======
+
 class ServicioBorrarUsuario {
     protected static async eliminar(obj: Usuario, res: Response): Promise<any> {
         try {
@@ -104,9 +104,10 @@ class ServicioBorrarUsuario {
                 error: error.message || 'Error desconocido'
             });
         }
->>>>>>> 62f9d91 (Cambios realizados)
+
     }
 }
 
 export default ServicioBorrarUsuario;
+
 
