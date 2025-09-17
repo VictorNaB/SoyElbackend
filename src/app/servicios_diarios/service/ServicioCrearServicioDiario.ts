@@ -6,7 +6,6 @@ import { Sql_ServiciosDiarios } from "../repository/Sql_ServiciosDiarios";
 class ServicioCrearServicioDiarios{
     protected static async CrearServicio_Diario(obj:Ser_Diarios,res:Response):Promise<any>{
         await pool.task(async(consulta)=>{
-<<<<<<< HEAD
 
             let caso=1;
             let objCreado:any;
@@ -15,7 +14,7 @@ class ServicioCrearServicioDiarios{
                 caso=2;
                 objCreado= await consulta.one(Sql_ServiciosDiarios.ADD,[obj.CodParqueadero,obj.CodVehiculo,obj.CodPuesto,obj.FechaInicio,obj.FechaFin,obj.ValorDiario]);
 
-=======
+
             let caso=1;
             let objCreado:any;
             
@@ -64,7 +63,7 @@ class ServicioCrearServicioDiarios{
                     obj.FechaFin,
                     obj.ValorDiario
                 ]);
->>>>>>> 62f9d91 (Cambios realizados)
+
             }
             return {caso, objCreado}
         }).then(({caso,objCreado})=>{
@@ -72,9 +71,7 @@ class ServicioCrearServicioDiarios{
                 case 1:
                     res.status(400).json({respuesta:"Vale mia eso ya esta"})
                     break;
-<<<<<<< HEAD
-            
-=======
+
                 case 3:
                     res.status(400).json({respuesta:"El vehículo no existe en la base de datos"})
                     break;
@@ -84,25 +81,25 @@ class ServicioCrearServicioDiarios{
                 case 5:
                     res.status(400).json({respuesta:"El puesto no existe o no pertenece al parqueadero especificado"})
                     break;
->>>>>>> 62f9d91 (Cambios realizados)
+
                 default:
                     res.status(200).json({objCreado})
                     break;
             }
-<<<<<<< HEAD
+
         }).catch((mierror)=>{
             console.log();
             res.status(400).json({respuesta:"Joaa"})
 
         });
 
-=======
+
         }).catch((error)=>{
             console.log(error);
             res.status(400).json({respuesta:"Tu porqueria no sirve"})
         });
->>>>>>> 62f9d91 (Cambios realizados)
     }
 }
+
 
 export default ServicioCrearServicioDiarios;
