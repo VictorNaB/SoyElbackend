@@ -9,14 +9,13 @@ class Servicios_DiariosConsulta{
         then((misdatos)=>{
             res.status(200).json(misdatos.rows)
         }).catch((mierror)=>{
-<<<<<<< HEAD
+
             console.log(mierror);
-=======
->>>>>>> 62f9d91 (Cambios realizados)
             res.status(400).json({respuesta:"Coño e la madre"})
         });
     }
 }
 
 export default Servicios_DiariosConsulta;
+
 
