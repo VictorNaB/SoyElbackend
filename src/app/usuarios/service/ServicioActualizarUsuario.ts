@@ -12,11 +12,11 @@ class ServicicioActualizarUsuario {
             const usuario= await consulta.one(sql_usuarios.HOW_MANY,[obj.codUsuario]);
             if (usuario.cantidad){
                 caso=2;
-<<<<<<< HEAD
+
                 objActualizado= await consulta.one(sql_usuarios.UPDATE,[obj.codRol,obj.documentoUsuario,obj.nombresUsuario,obj.apellidosUsuario,obj.generoUsuario,obj.fechaNacimientoUsuario,obj.telefonoUsuario]);
-=======
+
                 objActualizado= await consulta.result(sql_usuarios.UPDATE,[obj.codRol,obj.documentoUsuario,obj.nombresUsuario,obj.apellidosUsuario,obj.generoUsuario,obj.fechaNacimientoUsuario,obj.telefonoUsuario,obj.codUsuario,]);
->>>>>>> 62f9d91 (Cambios realizados)
+
 
             } 
             return {caso,objActualizado}
@@ -41,6 +41,7 @@ class ServicicioActualizarUsuario {
 
 
     }
+
 
 
 export default ServicicioActualizarUsuario;
