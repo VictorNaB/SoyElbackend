@@ -1,21 +1,19 @@
-<<<<<<< HEAD
+
 import { Response, Request } from "express";
 import pool from "../../../config/connection/dbConnetions";
 import Accesos from "../model/Accesos";
 import { sql_Accesos } from "../repository/Sql_Accesos";
-=======
 import { Response } from "express";
 import pool from "../../../config/connection/dbConnetions";
 import Accesos from "../model/Accesos";
 import { sql_Accesos } from "../repository/Sql_Accesos";
 import bcrypt from "bcryptjs";
->>>>>>> 62f9d91 (Cambios realizados)
 
 class ServicioCrearAccesos {
   protected static async crearAcceso(obj: Accesos, res: Response) {
     await pool
       .task(async (consulta) => {
-<<<<<<< HEAD
+
         let caso = 1;
         let objGrabado: any;
         const usuarioExiste = await consulta.oneOrNone(
@@ -61,7 +59,7 @@ class ServicioCrearAccesos {
             res.status(200).json({objGrabado});
           default:
 
-=======
+
         // Verificar si el usuario existe en la tabla usuarios
         const usuarioExiste = await consulta.oneOrNone(
           sql_Accesos.getUserById,
@@ -132,15 +130,15 @@ class ServicioCrearAccesos {
               message: "Acceso creado correctamente",
               data: result.objGrabado
             });
->>>>>>> 62f9d91 (Cambios realizados)
+
             break;
         }
       })
       .catch((error) => {
-<<<<<<< HEAD
+
         console.log(error);
         res.status(400).json({ respuesta: "Error al crear el acceso" });
-=======
+
         if (error.code === "23503") {
           return res.status(404).json({
             status: "error",
@@ -154,9 +152,9 @@ class ServicioCrearAccesos {
           message: "Error al crear el acceso",
           detail: error.message
         });
->>>>>>> 62f9d91 (Cambios realizados)
       });
   }
 }
 
 export default ServicioCrearAccesos;
+
