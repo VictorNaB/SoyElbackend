@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import { Response } from "express";
-=======
 import { json, Response } from "express";
->>>>>>> 62f9d91 (Cambios realizados)
 import Ser_Diarios from "../model/Ser_Diarios";
 import pool from "../../../config/connection/dbConnetions";
 import { Sql_ServiciosDiarios } from "../repository/Sql_ServiciosDiarios";
 
 class ServicioEliminarServicioDiarios{
     protected static async eliminar(obj:Ser_Diarios, res:Response):Promise<any>{
-<<<<<<< HEAD
         await pool.task((consulta)=>{
             return consulta.result(Sql_ServiciosDiarios.DELETE,[obj.CodServicioDiarios]);
         }).then((respuesta)=>{
@@ -20,7 +16,6 @@ class ServicioEliminarServicioDiarios{
 
         });
 
-=======
         await pool.task(async(consulta)=>{
 
             let caso=0;
@@ -54,8 +49,8 @@ class ServicioEliminarServicioDiarios{
             console.error("Error al eliminar el servicio diario:", mierror);
             res.status(400).json({respuesta:"Tu porqueria no sirve"})
         });
->>>>>>> 62f9d91 (Cambios realizados)
     }
 }
+
 
 export default ServicioEliminarServicioDiarios;
