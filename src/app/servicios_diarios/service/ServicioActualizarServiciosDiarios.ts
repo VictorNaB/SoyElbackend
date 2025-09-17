@@ -3,7 +3,7 @@ import Ser_Diarios from "../model/Ser_Diarios";
 import pool from "../../../config/connection/dbConnetions";
 import { Sql_ServiciosDiarios } from "../repository/Sql_ServiciosDiarios";
 
-<<<<<<< HEAD
+
 
 class ServicioActualizarServiciosDiarios{
     protected static async Actualizar(obj:Ser_Diarios,res:Response):Promise<any>{
@@ -38,7 +38,7 @@ class ServicioActualizarServiciosDiarios{
         });
     }
 
-=======
+
 class ServicioActualizarServiciosDiarios {
   protected static async Actualizar(
     obj: Ser_Diarios,
@@ -125,7 +125,7 @@ class ServicioActualizarServiciosDiarios {
         res.status(500).json({ respuesta: "Error interno del servidor" });
       });
   }
->>>>>>> 62f9d91 (Cambios realizados)
 }
+
 
 export default ServicioActualizarServiciosDiarios;
