@@ -7,7 +7,6 @@ class ServicioActualizarAcceso {
   protected static async ActualizarAcceso(obj: Accesos, res: Response) {
     await pool
       .task(async (consulta) => {
-<<<<<<< HEAD
         let caso = 1;
         let objGrabado: any;
         const access: any = await consulta.oneOrNone(sql_Accesos.getById, [
@@ -36,7 +35,6 @@ class ServicioActualizarAcceso {
             res.status(200).json({
               respuesta: "Acceso actualizado correctamente",
               detalle: objGrabado,
-=======
         // Verificar si el usuario existe en la tabla usuarios
         const usuarioExiste = await consulta.oneOrNone(
           sql_Accesos.getUserById,
@@ -102,18 +100,17 @@ class ServicioActualizarAcceso {
             res.status(200).json({
               status: "success",
               message: "Acceso actualizado correctamente"
->>>>>>> 62f9d91 (Cambios realizados)
+
             });
             break;
         }
       })
-<<<<<<< HEAD
+
       .catch((error) => {
         console.log(error);
         res.status(400).json({
           respuesta: "Error al actualizar el acceso",
           detalle: error.message,
-=======
       .catch((miError) => {
         if (miError.code === "23503") {
           return res.status(404).json({
@@ -127,10 +124,10 @@ class ServicioActualizarAcceso {
           status: "error",
           message: "Error al actualizar el acceso",
           detail: miError.message
->>>>>>> 62f9d91 (Cambios realizados)
         });
       });
   }
 }
 
 export default ServicioActualizarAcceso;
+
