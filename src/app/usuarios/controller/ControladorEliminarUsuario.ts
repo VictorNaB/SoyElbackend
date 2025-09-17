@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import ServicioBorrarUsuario from "../service/ServicioBorrarUsuario";
 import Usuario from "../model/Usuario";
 
-<<<<<<< HEAD
+
 class ControladorEliminarUsuario extends ServicioBorrarUsuario{
     public async BorrarUsuario(req:Request, res: Response): Promise<any> {
         const codUsuario = Number(req.params.codUsuario);
@@ -10,7 +10,7 @@ class ControladorEliminarUsuario extends ServicioBorrarUsuario{
         await ServicioBorrarUsuario.eliminar(objt, res);
     }
 }
-=======
+
 class ControladorEliminarUsuario extends ServicioBorrarUsuario {
     public async BorrarUsuario(req: Request, res: Response): Promise<any> {
         try {
@@ -54,6 +54,7 @@ class ControladorEliminarUsuario extends ServicioBorrarUsuario {
     }
 }
 
->>>>>>> 62f9d91 (Cambios realizados)
+
 const controladorEliminarUsuario = new ControladorEliminarUsuario();
+
 export default controladorEliminarUsuario;
