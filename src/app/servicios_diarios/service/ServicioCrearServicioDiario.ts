@@ -14,9 +14,6 @@ class ServicioCrearServicioDiarios{
                 caso=2;
                 objCreado= await consulta.one(Sql_ServiciosDiarios.ADD,[obj.CodParqueadero,obj.CodVehiculo,obj.CodPuesto,obj.FechaInicio,obj.FechaFin,obj.ValorDiario]);
 
-
-            let caso=1;
-            let objCreado:any;
             
             // Verificamos si el vehículo existe
             const vehiculoExiste = await consulta.oneOrNone(
@@ -103,3 +100,4 @@ class ServicioCrearServicioDiarios{
 
 
 export default ServicioCrearServicioDiarios;
+
